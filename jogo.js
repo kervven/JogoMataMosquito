@@ -14,6 +14,12 @@ ajustaTamanhoPalcoJogo()
 //os codigos dessa função precisaram ser encapsulados em uma função porque, como é necessário rodar esse codigo depois da existencia do body la no html, essa função precisa ser chamada dentro do body, que já é o momento em que ela é criada.
 //Caso o contratrio, a imagem do mosquito nao sera criada, pois a referencia do js no head vem primeiro do que a criação do body html
 function posicaoRandomica() {
+
+    //aqui vamos remover o mosquito anterior caso exista
+    if(document.getElementById('mosquito')) {
+        document.getElementById('mosquito').remove()
+    }
+
     var posicaoX = Math.floor(Math.random() * largura) - 90
     var posicaoY = Math.floor(Math.random() * altura) - 90
 
@@ -29,6 +35,7 @@ function posicaoRandomica() {
     mosquito.style.left = posicaoX + 'px'
     mosquito.style.top = posicaoY + 'px'
     mosquito.style.position = 'absolute'
+    mosquito.id = 'mosquito'
 
     document.body.appendChild(mosquito)
 }
