@@ -1,6 +1,7 @@
 var altura = 0
 var largura = 0
 var vidas = 1
+var tempo = 5
 
 
 function ajustaTamanhoPalcoJogo() {
@@ -10,6 +11,22 @@ function ajustaTamanhoPalcoJogo() {
 }
 
 ajustaTamanhoPalcoJogo()
+
+//aqui está a logica do cronometro, onde o tempo é contado de forma decrescente
+var cronometro = setInterval(function() {
+
+    tempo -= 1
+
+    //essa condicao serve para nao deixar o cronometro seguir com numeros negativos e estabelecendo a regra de vitoria do jogo
+    if(tempo < 0){
+
+        clearInterval(cronometro)
+        clearInterval(criaMosca)
+        alert('vitoria')
+    } else {
+    document.getElementById('cronometro').innerHTML = tempo
+    }
+}, 1000)
 
 //os codigos dessa função precisaram ser encapsulados em uma função porque, como é necessário rodar esse codigo depois da existencia do body la no html, essa função precisa ser chamada dentro do body, que já é o momento em que ela é criada.
 //Caso o contratrio, a imagem do mosquito nao sera criada, pois a referencia do js no head vem primeiro do que a criação do body html
