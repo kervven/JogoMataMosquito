@@ -1,7 +1,27 @@
 var altura = 0
 var largura = 0
 var vidas = 1
-var tempo = 5
+var tempo = 15
+
+//logica dos niveis do jogo, que altera a velocidade da criação aleatoria dos mosquitos
+var criaMosquitoTempo = 1500
+var nivel = window.location.search 
+nivel = nivel.replace('?', '')
+
+if (nivel === 'normal'){
+
+    criaMosquitoTempo = 1500
+
+} else if (nivel === 'dificil'){
+
+    criaMosquitoTempo = 1000
+
+} else if (nivel === 'expert'){
+
+    criaMosquitoTempo = 750
+
+}
+
 
 
 function ajustaTamanhoPalcoJogo() {
