@@ -1,3 +1,7 @@
+html {
+    cursor: url(imagens/mata_mosca.png) 0 0,  auto ;
+}
+
 body{
     background-image: url(imagens/bg.jpg);
     background-repeat: no-repeat;
@@ -21,7 +25,7 @@ body{
 
 .ladoA {
     transform: scaleX(1);
-}
+} 
 
 .ladoB {
     transform: scaleX(-1);
